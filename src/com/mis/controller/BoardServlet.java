@@ -8,6 +8,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.mis.controller.action.Action;
+import com.mis.controller.action.BoardWriteFormAction;
 
 /**
  * Servlet implementation class BoardServlet

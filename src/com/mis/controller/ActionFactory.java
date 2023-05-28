@@ -2,6 +2,7 @@ package com.mis.controller;
 
 import com.mis.controller.action.Action;
 import com.mis.controller.action.BoardListAction;
+import com.mis.controller.action.BoardWriteFormAction;
 
 public class ActionFactory {
 	
@@ -26,6 +27,8 @@ public class ActionFactory {
 		// Action 객체 추가되는 부분
 		if(command.equals("board_list")){
 			action = new BoardListAction();
+		} else if (command.equals("board_write_form")){
+			action = new BoardWriteFormAction();
 		}
 		
 		return action;
