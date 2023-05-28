@@ -148,7 +148,7 @@ public class BoardDAO {
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, num);
 
-			pstmt.executeQuery();
+			rs = pstmt.executeQuery();
 
 			if (rs.next()) {
 

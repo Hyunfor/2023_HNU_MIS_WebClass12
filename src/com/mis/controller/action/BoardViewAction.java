@@ -19,7 +19,7 @@ public class BoardViewAction implements Action{
 		// request객체의 getParameter를 통해 유저가 선택한 게시글 번호 가져오기
 		String num = request.getParameter("num"); 
 		
-		
+		// DB에서 게시글 정보 가져오기
 		BoardDAO bDao = BoardDAO.getInstance();
 		bDao.updateReadCount(num); // 게시글 조회수 수정
 		BoardVO bVo = bDao.selectOneBoardByNum(num); // 게시글 정보를 BoardVO로 받아옴
