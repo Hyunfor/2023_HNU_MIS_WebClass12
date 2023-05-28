@@ -1,6 +1,7 @@
 package com.mis.controller;
 
 import com.mis.controller.action.Action;
+import com.mis.controller.action.BoardListAction;
 
 public class ActionFactory {
 	
@@ -21,6 +22,11 @@ public class ActionFactory {
 		Action action = null;
 		
 		System.out.println("ActionFactory : " + command);
+		
+		// Action 객체 추가되는 부분
+		if(command.equals("board_list")){
+			action = new BoardListAction();
+		}
 		
 		return action;
 	}
