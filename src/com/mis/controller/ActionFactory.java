@@ -1,7 +1,11 @@
 package com.mis.controller;
 
 import com.mis.controller.action.Action;
+import com.mis.controller.action.BoardCheckPassAction;
+import com.mis.controller.action.BoardCheckPassFormAction;
 import com.mis.controller.action.BoardListAction;
+import com.mis.controller.action.BoardUpdateAction;
+import com.mis.controller.action.BoardUpdateFormAction;
 import com.mis.controller.action.BoardViewAction;
 import com.mis.controller.action.BoardWriteAction;
 import com.mis.controller.action.BoardWriteFormAction;
@@ -35,6 +39,14 @@ public class ActionFactory {
 			action = new BoardWriteAction();
 		} else if (command.equals("board_view")){ // 상세보기
 			action = new BoardViewAction();
+		} else if (command.equals("board_check_pass_form")){ // 게시글 수정시 비밀번호 체크
+			action = new BoardCheckPassFormAction();
+		} else if (command.equals("board_check_pass")){
+			action = new BoardCheckPassAction();
+		} else if (command.equals("board_update_form")){ // 게시글 수정
+			action = new BoardUpdateFormAction();
+		} else if (command.equals("board_update")){ // 게시글 수정
+			action = new BoardUpdateAction();
 		}
 		
 		

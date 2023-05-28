@@ -192,10 +192,10 @@ public class BoardDAO {
 			pstmt = conn.prepareStatement(sql);
 
 			pstmt.setString(1, bVo.getName());
-			pstmt.setString(1, bVo.getEmail());
-			pstmt.setString(1, bVo.getPass());
-			pstmt.setString(1, bVo.getTitle());
-			pstmt.setString(1, bVo.getContent());
+			pstmt.setString(2, bVo.getEmail());
+			pstmt.setString(3, bVo.getPass());
+			pstmt.setString(4, bVo.getTitle());
+			pstmt.setString(5, bVo.getContent());
 			pstmt.setInt(6, bVo.getNum());
 
 			pstmt.executeUpdate();
