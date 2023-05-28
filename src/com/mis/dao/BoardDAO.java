@@ -133,7 +133,7 @@ public class BoardDAO {
 	}
 
 	// 게시판 글 상세 보기 : 글번호로 찾아온다 : 실패시 null;
-	public BoardVO selectOneByNum(String num) {
+	public BoardVO selectOneBoardByNum(String num) {
 		String sql = "SELECT * FROM BOARD WHERE NUM = ?";
 
 		BoardVO bVo = null;
@@ -144,8 +144,8 @@ public class BoardDAO {
 		try {
 
 			conn = DBManager.getConnection();
+			
 			pstmt = conn.prepareStatement(sql);
-
 			pstmt.setString(1, num);
 
 			pstmt.executeQuery();
@@ -156,11 +156,10 @@ public class BoardDAO {
 
 				bVo.setNum(rs.getInt("num"));
 				bVo.setName(rs.getString("name"));
-				bVo.setEmail(rs.getString("email"));
 				bVo.setPass(rs.getString("pass"));
+				bVo.setEmail(rs.getString("email"));
 				bVo.setTitle(rs.getString("title"));
 				bVo.setContent(rs.getString("content"));
-				bVo.setReadcount(rs.getInt("readcount"));
 				bVo.setWritedate(rs.getTimestamp("writedate"));
 				bVo.setReadcount(rs.getInt("readcount"));
 

@@ -2,6 +2,8 @@ package com.mis.controller;
 
 import com.mis.controller.action.Action;
 import com.mis.controller.action.BoardListAction;
+import com.mis.controller.action.BoardViewAction;
+import com.mis.controller.action.BoardWriteAction;
 import com.mis.controller.action.BoardWriteFormAction;
 
 public class ActionFactory {
@@ -25,11 +27,16 @@ public class ActionFactory {
 		System.out.println("ActionFactory : " + command);
 		
 		// Action 객체 추가되는 부분
-		if(command.equals("board_list")){
+		if(command.equals("board_list")){ // 게시글 리스트
 			action = new BoardListAction();
-		} else if (command.equals("board_write_form")){
+		} else if (command.equals("board_write_form")){ // 글쓰기
 			action = new BoardWriteFormAction();
+		} else if (command.equals("board_write")){ 
+			action = new BoardWriteAction();
+		} else if (command.equals("board_view")){ // 상세보기
+			action = new BoardViewAction();
 		}
+		
 		
 		return action;
 	}
