@@ -131,5 +131,54 @@ public class BoardDAO {
 		}
 		
 	}
+	
+	// 게시판 글 상세 보기 : 글번호로 찾아온다 : 실패시 null;
+	public BoardVO selectOneByNum(String num){
+		String sql = "SELECT * FROM BOARD WHERE NUM = ?";
+		
+		BoardVO bVo = null;
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+
+		try {
+
+			conn = DBManager.getConnection();
+			pstmt = conn.prepareStatement(sql);
+
+			pstmt.setString(1, num);
+			
+			pstmt.executeQuery();
+			
+			if(rs.next()){
+				
+				bVo = new BoardVO();
+				
+				bVo.setNum(rs.getInt("num"));
+				bVo.setName(rs.getString("name"));
+				bVo.setEmail(rs.getString("email"));
+				bVo.setPass(rs.getString("pass"));
+				bVo.setTitle(rs.getString("title"));
+				bVo.setContent(rs.getString("content"));
+				bVo.setReadcount(rs.getInt("readcount"));
+				bVo.setWritedate(rs.getTimestamp("writedate"));
+				bVo.setReadcount(rs.getInt("readcount"));
+				
+			}
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				DBManager.close(conn, pstmt, rs);
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}	
+		} return bVo;
+		
+	}
+	
+	
 
 }
