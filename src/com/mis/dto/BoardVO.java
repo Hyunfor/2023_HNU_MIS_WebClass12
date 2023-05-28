@@ -12,6 +12,7 @@ public class BoardVO {
 	private String content;
 	private int readcount;
 	private Timestamp writedate;
+	
 	public int getNum() {
 		return num;
 	}
