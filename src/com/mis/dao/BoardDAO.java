@@ -230,7 +230,7 @@ public class BoardDAO {
 			pstmt.setString(1, pass);
 			pstmt.setString(2, num);
 
-			pstmt.executeQuery();
+			rs = pstmt.executeQuery();
 
 			if (rs.next()) {
 
@@ -242,7 +242,6 @@ public class BoardDAO {
 				bVo.setPass(rs.getString("pass"));
 				bVo.setTitle(rs.getString("title"));
 				bVo.setContent(rs.getString("content"));
-				bVo.setReadcount(rs.getInt("readcount"));
 				bVo.setReadcount(rs.getInt("readcount"));
 				bVo.setWritedate(rs.getTimestamp("writedate"));
 
