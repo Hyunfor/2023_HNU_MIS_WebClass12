@@ -30,9 +30,6 @@ public class BoardCheckPassAction implements Action{
 			url = "/board/boardCheckPass.jsp";
 			request.setAttribute("message", "비밀번호가 일치하지 않습니다.");
 		}
-		// 게시글 수정을 위해 비밀번호 체크시에 
-		// 비밀번호가 일치하지 않을때 밑에 messge만 뜨지 않음. 
-		// 그외에는 전부 정상 작동함.
 		
 		RequestDispatcher dispatcher = request.getRequestDispatcher(url);
 		dispatcher.forward(request, response);
